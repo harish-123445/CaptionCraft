@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Image Captioning</h1>
+    </header>
+    <main>
+        <div class="upload-container">
+            <form method="POST" enctype="multipart/form-data" action="/caption">
+                <input type="file" name="image" id="upload-image" accept="image/*">
+                <label for="upload-image" id="upload-label">Choose an image</label>
+                <button type="submit">Caption Image</button>
+            </form>
+        </div>
+        {% if image_path %}
+            <div class="image-container">
+                <img src="{{ image_path }}" alt="Uploaded Image">
+            </div>
+        {% endif %}
+        {% if caption %}
+            <div class="caption-container">
+                <h2>Caption:</h2>
+                <p>{{ caption }}</p>
+            </div>
+        {% endif %}
+        {% if error %}
+            <div class="error-container">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Image Captioner</p>
+    </footer>
+</body>
+</html>
