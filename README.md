@@ -47,9 +47,14 @@ For the complete set of project files, including trained models and dataset:
 
 [Google Drive Link - Image Captioning Project Files](https://drive.google.com/drive/folders/1uBk-Qqi--yepbk6zHqHIwyzBaFyrR-d-?usp=sharing)
 
+I hereby include the output images 
+![plot](output/output.png)
+![plot](output/output2.png)
 ## Acknowledgments
 
 - This project incorporates the BLIP open-source model for improved image caption predictions.
 - The LSTM and CNN models are trained using the Flickr 8K dataset, acknowledging its contribution to this work.
 
 Feel free to explore and contribute to this project!
+
+
