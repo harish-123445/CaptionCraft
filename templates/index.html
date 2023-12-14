@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1 class="display-4">Image Captioning</h1>
+        </div>
+    </header>
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="upload-container">
+                        <form method="POST" enctype="multipart/form-data" action="/caption">
+                            <input type="file" name="image" id="upload-image" accept="image/*" class="d-none">
+                            <label for="upload-image" id="upload-label" class="btn btn-primary btn-lg">Choose an image</label>
+                            <button type="submit" class="btn btn-primary btn-lg">Caption Image</button>
+                        </form>
+                    </div>
+                    {% if image_path %}
+                        <div class="image-container">
+                            <img src="{{ image_path }}" alt="Uploaded Image" class="img-fluid rounded shadow">
+                        </div>
+                    {% endif %}
+                    {% if blip_model_caption %}
+                        <div class="caption-container mt-4 p-3 rounded shadow">
+                            <h2 class="h4">Caption :</h2>
+                            <p class="lead">{{ blip_model_caption }}</p>
+                        </div>
+                    {% endif %}
+                    {% if error %}
+                        <div class="error-container text-danger mt-4">
+                            <p>{{ error }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-2">
+        <p>&copy; 2023 Image Captioner</p>
+    </footer>
+</body>
+</html>
