@@ -15,10 +15,12 @@ This project focuses on generating captions for images using a combination of LS
 
 The project files are organized as follows:
 
-- `flask_app.py`: Flask application allowing image upload and caption generation.
+- `main.py`: Flask application allowing image upload and caption generation.
 - `models/`: Directory containing LSTM and CNN model files.
-- `BLIP_model/`: Integration of BLIP model for enhanced predictions.
-- `datasets/`: Folder housing the Flickr 8K dataset used for training.
+- `BLIP/`: Integration of BLIP model for enhanced predictions.
+- `Flickr_8k/`: Folder housing the Flickr 8K dataset used for training.
+- `static and template `:Folder containing the html and css file for flask
+- `test_model.py` :utility file to generate the caption and send it to flask file
 
 ## Getting Started
 
@@ -27,19 +29,14 @@ To run the application locally:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/image-captioning.git
+    [git clone https://github.com/your-username/image-captioning.git](https://github.com/harish-123445/CaptionCraft.git)
     ```
 
-2. Install the necessary dependencies:
+
+2. Start the Flask application:
 
     ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Start the Flask application:
-
-    ```bash
-    python flask_app.py
+    python main.py
     ```
 
 4. Open your browser and visit `http://localhost:5000` to access the image captioning interface.
